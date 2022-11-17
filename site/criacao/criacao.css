@@ -95,17 +95,127 @@ body {
 .input-group{
     color: white;
     display: flex;
+    /*os itens flexíveis serão agrupados em várias linhas, de cima para baixo.*/
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 16px 0;
 }
 
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:17.6px ;
+}
 
+.input-box input{
+    margin: 9.6px 0;
+    padding: 12.8px 19.2px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
 
-.gender-title{
+/* mudar a cor do input, do quadrado onde a pessoa escreve os dados*/
+.input-box input:hover{
+    background-color:whitesmoke ;
+}
+/*colocar a borda que fica em volta do input*/
+.input-box input:focus-visible{
+    outline: 2px solid #202127 ;
+}
+
+/*Mudando a cor e fonte das informaç~es*/
+.input-box label,
+.gender-title h5 {
+    font-size: 11,2px;
+    font-weight: 600;
     color: white;
 }
+
+.input-box input::placeholder{
+    color: #000000be;
+    font-weight: 400;
+}
+
 .gender-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 9.92px;
+    padding: 0 8px;
     color: white;
 }
 
+.gender-input{
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input{
+    margin-right: 5.6px;
+}
+
+.gender-input label{
+    font-size: 12.96px;
+    font-weight: 600;
+}
+
+.continue-button button{
+    width: 100%;
+    margin-top:40px ;
+    border: none;
+    /*padding para aumentar a altura da box de continuar*/
+    padding: 9.92px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.continue-button button:hover{
+    background-color:rgba(47,79,79);
+}
+
+.continue-button button a{
+    text-decoration: none;
+    font-size:14.88px ;
+    font-weight: 500;
+}
+
+@media  screen and (max-width: 1330px){
+    .form-image {
+        display: none;
+    }
+    /*largura das bordas, quanto maior menos bordas do boddy*/
+    .container{
+        width: 50%;
+    }
+    .form{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1064px){
+
+    .container{
+        width: 90%;
+        height: auto;
+    }
+    .input-group {
+       flex-direction: column;
+       /*colocar a barra de rolagem*/
+       overflow-y: scroll;
+       flex-wrap: nowrap; 
+       max-height: 160px;
+       /*separar a scroll do texto usar o padding*/
+       padding-right: 80px;
+    }
+    /*arrumar o espaçamento*/
+    .gender-inputs{
+        margin-top: 32px ;
+    }
+    .gender-group{
+        flex-direction: column;
+    }
+    /*aumentar o espaçamento da coluna entre os botoes*/
+    .gender-input{
+        margin-top: 8px;
+    }
+}
